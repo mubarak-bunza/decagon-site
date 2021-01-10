@@ -43,6 +43,12 @@ body {
   transition: .2s;
 }
 
+@media (max-width: 414px) {
+  .btn {
+    padding: 1.2rem 3rem;
+  }
+}
+
 .center {
   text-align: center !important;
 }
@@ -96,6 +102,15 @@ header nav .nav-links {
   header nav .nav-links .nav-logo {
     padding: 25px 0;
   }
+}
+
+@media (max-width: 768px) and (max-width: 414px) {
+  header nav .nav-links .nav-logo {
+    padding: 20px 0;
+  }
+}
+
+@media (max-width: 768px) {
   header nav .nav-links .menu-icon {
     content: url("./images/menu-icon.svg");
     width: 40px;
@@ -152,6 +167,12 @@ header .header-intro {
   position: relative;
   text-align: center;
   padding-top: 12rem;
+}
+
+@media (max-width: 414px) {
+  header .header-intro {
+    padding-top: 10rem;
+  }
 }
 
 header .header-intro .vetted {
