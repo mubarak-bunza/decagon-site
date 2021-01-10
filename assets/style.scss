@@ -45,15 +45,23 @@ body {
 }
 
 // helper classes
+.scrolled {
+    background-color: rgba(0,0,0,0.5);
+}
 .btn {
     background-image: $heading-btn-bg;
     border: 0;
-    padding: 1.3rem 3rem;
+    padding: 1.6rem 5rem;
     color: #fff;
     font-size: 1.2rem;
     font-weight: bold;
     line-height: 1rem;
     cursor: pointer;
+
+    &:hover {
+        margin-top: -2px;
+        transition: .2s;
+    }
 }
 .center {
     text-align: center !important;
@@ -86,8 +94,8 @@ header {
     
     nav {
         position: fixed;
-        background-color: rgba(0,0,0,0.1);
-        
+        // background-color: rgba(0,0,0,0.3);
+        z-index: 99999;
         .nav-links {
             display: flex;
             justify-content: space-between;
@@ -159,7 +167,7 @@ header {
         }
 
         h1 {
-            font-size: 4.5rem;
+            font-size: 4.3rem;
             line-height: 1;
 
             @include ipad(){
@@ -171,7 +179,7 @@ header {
         }
 
         h3 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             // line-height: 3.5rem;
             padding: 3rem 0 5rem 0;
 
@@ -203,26 +211,51 @@ header {
     
     .container {
         justify-content: space-between;
-        background-color: violet;
+        align-items: center;
         flex-wrap: wrap;
+        @include ipad(){
+            width: 95%;
+        }
     }
     p {
-        background-color: yellow;
-        // flex-basis: auto;
         flex-grow: 1;
         @include ipad(){
-            
+            text-align: center;
+            font-size: 1.5rem;
+            line-height: 2rem;
+            margin-bottom: 2rem;
+        }
+        @include mobile(){
+            font-size: 1rem;
         }
     }
 
     .logos-wrapper {
-        // flex-basis: auto;
         flex-grow: 2;
-        background-color: yellowgreen;
-
+        
+        @include ipad(){
+            overflow: hidden;
+            flex-grow: unset;
+        }
         .logos {
+            overflow: scroll;
             display: flex;
             justify-content: space-between;
+            align-items: center;
+            div {
+                margin-right: 2.5rem;
+                
+            }
+            img {
+                width: 100px;
+
+                @include ipad(){
+                    width: 150px;
+                }
+                @include mobile(){
+                    width: 100px;
+                }
+            }
         }
     }
 
@@ -389,6 +422,7 @@ header {
         padding-bottom: 3rem;
         
         .card {
+            position: relative;
             background-color: #fff;
             // width: 25%;
             height: 500px;
@@ -410,9 +444,7 @@ header {
             box-sizing: initial;
             font-size: 1rem;
             line-height: 2rem;
-            // .card-img {
-
-            // }
+            
             .card-text {
                 .card-title {
                     font-size: 1.5rem;
@@ -427,11 +459,21 @@ header {
             }
 
             .card-footer {
+                position: absolute;
+                bottom: 50px;
                 font-size: 1.1rem;
-                margin-top: 4rem;
+                // margin-top: 4rem;
                 img {
                     margin-right: 1.5rem;
                     vertical-align: middle;
+                }
+                a {
+                    text-decoration: none;
+                    color: #000;
+
+                    &:hover {
+                        color: #34a853;
+                    }
                 }
             }
         }
