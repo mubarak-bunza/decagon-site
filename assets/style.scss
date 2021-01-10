@@ -45,6 +45,16 @@ body {
 }
 
 // helper classes
+.btn {
+    background-image: $heading-btn-bg;
+    border: 0;
+    padding: 1.3rem 3rem;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 1rem;
+    cursor: pointer;
+}
 .center {
     text-align: center !important;
 }
@@ -54,6 +64,11 @@ h2 {
     line-height: 4rem;
     padding: 3.5rem 0;
     font-weight: bold;
+
+    @include mobile(){
+        padding: 2rem 0;
+        font-size: 1.6rem;
+    }
 }
 
 header {
@@ -78,15 +93,21 @@ header {
             justify-content: space-between;
             
             @include ipad(){
-                display: block;
+                // display: block;
 
                 .nav-logo {
                     padding: 25px 0;
                 }
 
-                // .hamburger-menu {
-                    
-                // }
+                .menu-icon {
+                    content: url('./images/menu-icon.svg');
+                    width: 40px;
+                }
+
+                .menu-btns {
+                    display: none;
+                }
+
             }
 
             ul {
@@ -162,37 +183,49 @@ header {
             }
         }
 
-        button {
-            background-image: $heading-btn-bg;
-            border: 0;
-            padding: 1.3rem 3rem;
-            color: #fff;
-            font-size: 1.2rem;
-            font-weight: bold;
-            line-height: 1rem;
-            cursor: pointer;
-        }
     }
 }
+
+// .banner{
+//     overflow: hidden;
+// }
+// .img-wrapper{
+//     overflow: scroll;
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: ;
+// }
 
 // partners
 .partners {
     padding: 4rem 0;
     background-color: rgba(249,250,251,0.7);
     
-    .partners-content {
-        // flex-wrap: wrap;
-        
-        .logos-wrapper {
-            display: flex;
-            justify-content: space-between;
-            overflow: hidden;
-            width: 100%;
-            .logos {
-                overflow: scroll;
-            }
+    .container {
+        justify-content: space-between;
+        background-color: violet;
+        flex-wrap: wrap;
+    }
+    p {
+        background-color: yellow;
+        // flex-basis: auto;
+        flex-grow: 1;
+        @include ipad(){
+            
         }
     }
+
+    .logos-wrapper {
+        // flex-basis: auto;
+        flex-grow: 2;
+        background-color: yellowgreen;
+
+        .logos {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
 }
 
 // why decagon 
@@ -202,7 +235,7 @@ header {
         font-size: 1.5rem;
         margin-bottom: 1rem;
         @include ipad(){
-            font-size: 2rem;
+            font-size: 1.5rem;
             margin-top: 1.5rem;
         }
     }
@@ -220,16 +253,22 @@ header {
         flex-basis: 55%;
         @include ipad(){
             flex-basis: 100%;
+            flex-grow: 2;
         }
     }
     .flex-item {
         flex-basis: 40%;
         @include ipad(){
+            flex-basis: 48%;
+            // flex-grow: 1;
+        }
+        @include mobile(){
             flex-basis: 100%;
         }
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        flex-wrap: wrap;
         text-align: justify;
         margin: 0 2rem;
         @include ipad(){
@@ -237,6 +276,10 @@ header {
         }
         .item {
             margin: 0 10px;
+            // @include ipad(){
+            //     flex-basis: 20%;
+            //     margin: 0;
+            // }
         }
 
         .item-text {
@@ -244,7 +287,7 @@ header {
             line-height: 1.6rem;
             opacity: .6;
             @include ipad(){
-                font-size: 2rem;
+                font-size: 1.3rem;
                 line-height: 2rem;
             }
         }
@@ -259,10 +302,22 @@ header {
         margin: 0 auto;
         padding: 7rem 0;
         text-align: center;
-
+        @include ipad(){
+            width: 80%;
+        }
         h3 {
             font-size: 1.6rem;
-            line-height: 2rem;
+            line-height: 2.5rem;
+
+            @include ipad(){
+                font-size: 2rem;
+            }
+            
+            @include mobile(){
+                font-size: 1.7rem;
+
+            }
+
         }
     }
 }
@@ -294,6 +349,9 @@ header {
                 margin-top: 1.5rem;
                 font-size: 2rem;
             }
+            @include mobile(){
+                font-size: 1.1rem;
+            }
             h4 {
                 margin-bottom: 2.2rem;
                 @include ipad(){
@@ -307,12 +365,19 @@ header {
                 @include ipad(){
                     font-size: 1.5rem;
                 }
+
+                @include mobile(){
+                    font-size: 1rem;
+                }
             }
         }
     }
 
     .leadership-heading {
         justify-content: center;
+        @include mobile(){
+            justify-content: unset;
+        }
         h2 {
             padding-top: 0;
         }
@@ -388,9 +453,14 @@ header {
             margin-bottom: 1.6rem;
         }
         .partners-logo {
+            width: 70%;
+            margin: 0 auto;
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
+            justify-content: space-evenly;
+            @include ipad(){
+                justify-content: space-around;
+            }
             img {
                 margin-bottom: 1.5rem;
             }
@@ -404,7 +474,7 @@ header {
         color: #fff;
         text-align: center;
         padding: 4rem;
-        margin-bottom: 3rem;
+        margin-bottom: 5rem;
         
         @include ipad() {
             width: 100%;
@@ -462,6 +532,178 @@ header {
                 }
             }
             
+        }
+    }
+}
+
+// news from HQ
+.news-from-hq {
+    background-color: rgba(249,250,251,0.7);
+    .container {
+        h2 {
+            padding: 2rem 0;
+            
+        }
+    }
+    .news-deck {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding-bottom: 5rem;
+    }
+    .news-card {
+        display: flex;
+        align-items: flex-end;
+        height: 500px;
+        background-size: cover;
+        background-position: 50% 50%;
+        position: relative;
+        margin-right: 2rem;
+        &:last-child{
+            margin-right: 0;
+        }
+        flex-basis: 30%;
+        @include ipad(){
+            flex-basis: 45%;
+            margin-bottom: 2rem;
+
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+
+        @include mobile(){
+            flex-basis: 100%;
+            margin-right: 0;
+        }
+        .overlay {
+            display: block;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-image: $news-card-bg;   
+            
+            &:hover {
+                transition: all 0.5s linear;
+                background: transparent linear-gradient(180deg, rgba(180,210,69,0.6), rgba(55,169,82,0.6)) 0 0 no-repeat;
+            }
+        }
+        .card-title {
+            padding: 2.5rem;
+            color: #fff;
+            z-index: 9999;
+            font-size: 1.5rem;
+            @include ipad(){
+                font-size: 1.5rem;
+                padding: 2rem;
+            }
+
+            @include mobile(){
+                font-size: 1.2rem;
+            }
+
+            a {
+                color: #fff;
+                text-decoration: none;
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+// footer
+footer {
+    background-color: #2c3134;
+    color: #fff;
+
+    .container {
+        display: block;
+    }
+
+    .build-team {
+        text-align: center;
+        padding: 5.5rem 0;
+        border-bottom: 2px solid #fff;
+        margin-bottom: 3.5rem;
+
+        @include mobile(){
+            padding: 4rem 0;
+            margin-bottom: 2rem;
+        }
+        h3 {
+            font-size: 3.5rem;
+            // line-height: 4rem;
+            @include mobile(){
+                font-size: 2.5rem;
+            }
+        }
+        button {
+            margin-top: 4rem ;
+        }
+    }
+
+    .footer-section {
+        display: flex;
+        flex-wrap: wrap-reverse;
+        padding-bottom: 5rem;
+        
+        .social {
+            flex-basis: auto;
+            flex-grow: 1;
+            @include ipad(){
+                text-align: center;
+            }
+
+            .decagon-logo {
+                content: url('./images/logo-white.svg');
+                @include ipad(){
+                    content: unset;
+                }
+            }
+            .icons {
+                img {
+                    margin: 2rem 0;
+                    margin-right: 1.5rem;  
+
+                    @include ipad(){
+                        margin-top: 3rem;
+                        margin-bottom: 1.5rem;
+                    }
+                }
+            }
+        }
+
+        .information {
+            flex-grow: 2;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            // @include mobile(){
+            //     margin-top: 1rem;
+            // }
+            h4 {
+                font-size: 1.1rem;
+                font-weight: bolder;
+                line-height: 2.5;
+                @include mobile(){
+                    margin-top: 1rem;
+                }
+            }
+            ul li {
+                line-height: 2rem;
+                list-style: none;
+                a {
+                    color: #fff;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: #34a853;
+                    }
+                }
+
+                img {
+                    vertical-align: middle;
+                }
+            }
         }
     }
 }
