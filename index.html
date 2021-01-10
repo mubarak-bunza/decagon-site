@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Decagon</title>
+    <link rel="shortcut icon" href="./assets/images/favicons-favicon.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/style.css">
@@ -12,13 +13,21 @@
     <header>
         <nav class="container-fluid nav">
             <div class="container nav-links">
-                <img class="nav-logo" src="./assets/images/logo-white.svg" alt="decagon-logo">
+                <div class="logo-link">
+                    <img class="nav-logo" src="./assets/images/logo-white.svg" alt="decagon-logo">
+                </div>
                 
-                <div class="menu-icon"></div>
-                <ul class="menu-btns">
-                    <li><a href="#">For Developers</a></li>
-                    <li><a class="get-started" href="#">Get Started</a></li>
-                </ul>
+                <div class="icon-link">
+                    <button id="icon">
+                        <span class="menu-icon"></span>
+                    </button>
+                </div>
+                <div class="menu-link">
+                    <ul class="menu-btns show" id="menu-btn">
+                        <li><a href="#">For Developers</a></li>
+                        <li><a class="get-started" href="#">Get Started</a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
 
