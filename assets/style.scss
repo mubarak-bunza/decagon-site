@@ -58,10 +58,10 @@ body {
     line-height: 1rem;
     cursor: pointer;
 
-    &:hover {
-        margin-top: -2px;
-        transition: .2s;
-    }
+    // &:hover {
+    //     margin-top: -1px;
+    //     transition: .2s;
+    // }
 
     @include mobile(){
         padding: 1.2rem 3rem;

@@ -37,12 +37,6 @@ body {
   cursor: pointer;
 }
 
-.btn:hover {
-  margin-top: -2px;
-  -webkit-transition: .2s;
-  transition: .2s;
-}
-
 @media (max-width: 414px) {
   .btn {
     padding: 1.2rem 3rem;
